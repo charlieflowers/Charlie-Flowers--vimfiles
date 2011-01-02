@@ -29,7 +29,7 @@ set laststatus=2
 set relativenumber
 set undofile
 
-let mapleader = ","
+let mapleader = ','
 
 set ignorecase
 set smartcase
@@ -102,14 +102,16 @@ vnoremap <tab> %
 
 :nmap <F4> :vimgrep // **/*<left><left><left><left><left><left>
 
-map <F2> :mksession! ~/vim_session <cr> " Quick write session with F2
-map <F3> :source ~/vim_session <cr>     " And load session with F3
+map <F2> :mksession! ~/vim_session <cr> ' Quick write session with F2
+map <F3> :source ~/vim_session <cr>     ' And load session with F3
 
-augroup myvimrc
+augroup myvimrc;
     au!
     au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
 augroup END
 
+" Setting 'directory' makes the temp files be stored somewhere other than where the file is being edited
+set directory=c:/charlie.flowers/vimtemp/
 
 
 
