@@ -89,7 +89,7 @@ set foldlevelstart=99
 
 set history=1000
 set undolevels=1000
-set wildignore=*.swp,*.bak,*.obj,*.dll,*/bin/*,*.exe,*.pdb,*.cache,_Resharper.*/*
+set wildignore=*.swp,*.bak,*.obj,*.dll,*/bin/*,*.exe,*.pdb,*.cache,_Resharper.*/*,*.un~,*.*.un~,*~
 
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
@@ -105,6 +105,18 @@ vnoremap <tab> %
 map <F2> :mksession! ~/vim_session <cr> ' Quick write session with F2
 map <F3> :source ~/vim_session <cr>     ' And load session with F3
 
+nmap <leader>y :YRShow<CR>
+
+nmap <leader>af :args **/*.js<CR>
+
+let g:bufExplorerShowDirectories=0
+let g:bufExplorerShowRelativePath=1
+nmap <leader>b :LustyBufferExplorer<CR>
+
+nnoremap <F5> :buffers<CR>:buffer<Space>
+
+set wildchar=<Tab> wildmenu wildmode=full
+
 augroup myvimrc;
     au!
     au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
@@ -113,5 +125,28 @@ augroup END
 " Setting 'directory' makes the temp files be stored somewhere other than where the file is being edited
 set directory=c:/charlie.flowers/vimtemp/
 
+""""""""""""""""""""""""""""""
+" => JavaScript section
+"""""""""""""""""""""""""""""""
+"au FileType javascript call JavaScriptFold()
+"au FileType javascript setl fen
+"au FileType javascript setl nocindent
+
+"au FileType javascript imap <c-t> AJS.log();<esc>hi
+"au FileType javascript imap <c-a> alert();<esc>hi
+
+"au FileType javascript inoremap <buffer> $r return
+"au FileType javascript inoremap <buffer> $f //--- PH ----------------------------------------------<esc>FP2xi
+
+"function! JavaScriptFold()
+    "setl foldmethod=syntax
+    "setl foldlevelstart=1
+    "syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
+
+    "function! FoldText()
+    "return substitute(getline(v:foldstart), '{.*', '{...}', '')
+    "endfunction
+    "setl foldtext=FoldText()
+"endfunction
 
 

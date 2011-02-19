@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='C:/charlie.flowers/atlasClient/javascriptmvc-3/jmvc_machinery/framework/test_helpers/test/jasmine'
+let g:netrw_dirhist_2='C:/charlie.flowers/atlasClient/javascriptmvc-3/jmvc_machinery/framework'
+let g:netrw_dirhist_3='C:/charlie.flowers/atlasClient/javascriptmvc-3/jmvc_machinery/framework/characteristics/application/cross_applicant'
+let g:netrw_dirhist_4='C:/charlie.flowers/atlasClient/javascriptmvc-3/jmvc_machinery/framework/test/jasmine'
+let g:netrw_dirhist_5='C:/charlie.flowers/atlasClient/javascriptmvc-3/jmvc_machinery/framework/test_helpers/test/jasmine'
