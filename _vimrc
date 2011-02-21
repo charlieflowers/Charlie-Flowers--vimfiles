@@ -125,6 +125,9 @@ augroup END
 " Setting 'directory' makes the temp files be stored somewhere other than where the file is being edited
 set directory=c:/charlie.flowers/vimtemp/
 
+" Settings added for snipmate
+filetype plugin on
+
 """"""""""""""""""""""""""""""
 " => JavaScript section
 """""""""""""""""""""""""""""""
