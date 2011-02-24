@@ -162,6 +162,16 @@ noremap <silent> ,mj <C-W>J
 " Prevent GVIM from wasting space on menus and crap
 set guioptions=ac
 
+" converting to camel case, pascal case, or underscore case (inflection)
+" first, convert underscore_case to PascalCase
+vnoremap ,tp :s/_\([a-z]\)/\u\1/<CR>gUl:noh<cr>
+
+" second, convert underscore_case to camelCase
+vnoremap ,tc :s/_\([a-z]\)/\u\1/<CR>:noh<cr>
+
+" third, convert PascalCase or camelCase to underscore_case
+vnoremap ,tu :s/\<\@!\([A-Z]\)/\_\l\1/<CR>gul:noh<cr>
+
 """"""""""""""""""""""""""""""
 " => JavaScript section
 """""""""""""""""""""""""""""""
