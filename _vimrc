@@ -89,7 +89,7 @@ set foldlevelstart=99
 
 set history=1000
 set undolevels=1000
-set wildignore=*.swp,*.bak,*.obj,*.dll,*/bin/*,*.exe,*.pdb,*.cache,_Resharper.*/*,*.un~,*.*.un~,*~
+set wildignore=*.swp,*.bak,*.obj,*.dll,*/bin/*,*.exe,*.pdb,*.cache,_Resharper.*/*,*.un~,*.*.un~,*~,*.orig
 
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
@@ -109,9 +109,12 @@ nmap <leader>y :YRShow<CR>
 
 nmap <leader>af :args **/*.js<CR>
 
+" Easy way back to alternate buffer!
+nmap <leader>ab :b#<CR>
+nmap <leader>bb :b#<CR>
+
 let g:bufExplorerShowDirectories=0
 let g:bufExplorerShowRelativePath=1
-nmap <leader>b :LustyBufferExplorer<CR>
 
 nnoremap <F5> :buffers<CR>:buffer<Space>
 
@@ -127,6 +130,37 @@ set directory=c:/charlie.flowers/vimtemp/
 
 " Settings added for snipmate
 filetype plugin on
+
+" Great window movement and closwe mappings I got from Derek Wyatt
+" Close the window below this one
+noremap <silent> ,cj :wincmd j<cr>:close<cr>
+
+" Close the window above this one
+noremap <silent> ,ck :wincmd k<cr>:close<cr>
+
+" Close the window to the left of this one
+noremap <silent> ,ch :wincmd h<cr>:close<cr>
+
+" Close the window to the right of this one
+noremap <silent> ,cl :wincmd l<cr>:close<cr>
+
+" Close the current window
+noremap <silent> ,cc :close<cr>
+
+" Move the current window to the right of the main Vim window
+noremap <silent> ,ml <C-W>L
+
+" Move the current window to the top of the main Vim window
+noremap <silent> ,mk <C-W>K
+
+" Move the current window to the left of the main Vim window
+noremap <silent> ,mh <C-W>H
+
+" Move the current window to the bottom of the main Vim window
+noremap <silent> ,mj <C-W>J
+
+" Prevent GVIM from wasting space on menus and crap
+set guioptions=ac
 
 """"""""""""""""""""""""""""""
 " => JavaScript section
